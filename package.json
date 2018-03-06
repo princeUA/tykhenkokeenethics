@@ -11,7 +11,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
     "uuid-token-generator": "^1.0.0",
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^6.26.0"
   },
   "scripts": {
     "start": "babel-node server.js",
