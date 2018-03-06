@@ -16,7 +16,7 @@
     "uuid-token-generator": "^1.0.0"
   },
   "scripts": {
-    "start": "babel-node server.js",
+    "start": "node server.js",
     "build": "webpack"
   },
   "devDependencies": {
