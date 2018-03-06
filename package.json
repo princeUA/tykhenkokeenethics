@@ -13,7 +13,7 @@
     "uuid-token-generator": "^1.0.0"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node server.js --ignore public/"
+    "start": "babel-node server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
