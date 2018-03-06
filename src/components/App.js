@@ -36,16 +36,16 @@ class App extends Component {
           {_.map(this.state.timeline, item => {
             return(
               <div key={item.id} className="item">
-                <div><a href={'https://twitter.com/' + item.entities.user_mentions[0].screen_name}>{item.entities.user_mentions[0].name} @{item.entities.user_mentions[0].screen_name}</a> {item.created_at} </div>
+                <div><a href={'https://twitter.com/' + item.entities.user_mentions[0].screen_name}>{item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].name ? item.entities.user_mentions[0].name : ''} {item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].screen_name ? '@' + item.entities.user_mentions[0].screen_name : ''}</a> {item.created_at} </div>
                 <div>
                   {item.entities.urls && item.entities.urls[0] && item.entities.urls[0].expanded_url ?
                     <a href={item.entities.urls[0].expanded_url}>
-                      {item.text}
+                      {item.text ? item.text : ''}
                       {item.entities.media && item.entities.media[0] && item.entities.media[0].media_url_https ? <img src={item.entities.media[0].media_url_https} /> : ''}
                     </a>
                   :
                     <div>
-                      {item.text}
+                      {item.text ? item.text : ''}
                       {item.entities.media && item.entities.media[0] && item.entities.media[0].media_url_https ? <img src={item.entities.media[0].media_url_https} /> : ''}
                     </div>
                   }
