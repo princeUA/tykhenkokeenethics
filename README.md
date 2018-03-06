@@ -11,7 +11,7 @@ In the project directory, you can run:
 
 Runs the app in the development mode.
 
-#### `npm build`
+#### `npm run build`
 
 Builds the app using Webpack bundler.
 

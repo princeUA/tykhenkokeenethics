@@ -36,7 +36,20 @@ class App extends Component {
           {_.map(this.state.timeline, item => {
             return(
               <div key={item.id} className="item">
-                <div><a href={'https://twitter.com/' + item.entities.user_mentions[0].screen_name}>{item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].name ? item.entities.user_mentions[0].name : ''} {item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].screen_name ? '@' + item.entities.user_mentions[0].screen_name : ''}</a> {item.created_at} </div>
+                <div>
+                  {item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].screen_name ?
+                    <span>
+                      <a href={'https://twitter.com/' + item.entities.user_mentions[0].screen_name}>
+                        {item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].name ? item.entities.user_mentions[0].name : ''} '@'{item.entities.user_mentions[0].screen_name}
+                      </a>
+                      {item.created_at}
+                    </span>
+                  :
+                    <span>
+                      {item.entities.user_mentions && item.entities.user_mentions[0] && item.entities.user_mentions[0].name ? item.entities.user_mentions[0].name : ''} {item.created_at}
+                    </span>
+                  }
+                </div>
                 <div>
                   {item.entities.urls && item.entities.urls[0] && item.entities.urls[0].expanded_url ?
                     <a href={item.entities.urls[0].expanded_url}>
