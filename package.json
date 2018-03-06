@@ -2,6 +2,9 @@
   "name": "tykhenkokeenethics",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "6.2.0"
+  }
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.2",
@@ -13,7 +16,8 @@
     "uuid-token-generator": "^1.0.0"
   },
   "scripts": {
-    "start": "babel-node server.js"
+    "start": "babel-node server.js",
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
